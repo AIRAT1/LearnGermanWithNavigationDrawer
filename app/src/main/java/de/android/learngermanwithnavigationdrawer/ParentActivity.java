@@ -20,7 +20,6 @@ public abstract class ParentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
     abstract void firstInit();
     abstract void readWords();

@@ -17,7 +17,7 @@ public class LearnActivity extends ParentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_learn);
+        setContentView(R.layout.main_layout);
         firstInit();
         readWords();
         pickRandomWords();
@@ -54,7 +54,7 @@ public class LearnActivity extends ParentActivity {
     @Override
     void pickRandomWords() {
         if (adapter == null) {
-            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, fiveAnswers);
+            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, allQuestionList);
         }else {
             adapter.notifyDataSetChanged();
         }
