@@ -1,8 +1,6 @@
 package de.android.learngermanwithnavigationdrawer;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,18 +12,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
-public class TestActivity extends AppCompatActivity {
-    private Map<String, String> dictionary;
-    private List<String> allQuestionList;
-    private List<String> fiveAnswers;
-    private ArrayAdapter<String> adapter;
-    private TextView questionTextView, scoreTextView;
-    private ListView listView;
+public class TestActivity extends ParentActivity {
     private int score = 0;
-
+    private TextView scoreTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +28,9 @@ public class TestActivity extends AppCompatActivity {
         pickRandomWords();
     }
 
-    private void firstInit() {
+    void firstInit() {
         questionTextView = (TextView)findViewById(R.id.questionTextView);
         scoreTextView = (TextView)findViewById(R.id.scoreTextView);
-        Log.d("TAG", String.valueOf(scoreTextView == null));
         scoreTextView.setText("Счёт: " + score);
         listView = (ListView)findViewById(R.id.listView);
         dictionary = new HashMap<>();
@@ -48,7 +38,7 @@ public class TestActivity extends AppCompatActivity {
         fiveAnswers = new ArrayList<>();
     }
 
-    private void readWords() {
+    void readWords() {
         Scanner scanner = new Scanner(getResources().openRawResource(R.raw.list));
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
@@ -66,7 +56,7 @@ public class TestActivity extends AppCompatActivity {
         }
     }
 
-    private void pickRandomWords() {
+    void pickRandomWords() {
         List<String> fiveQuestions = new ArrayList<>();
         Collections.shuffle(allQuestionList);
         for (int i = 0; i < 5; i++) {
