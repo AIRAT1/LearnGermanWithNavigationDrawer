@@ -100,7 +100,7 @@ public class TestActivity extends ParentActivity {
         questionTextView.setText(theWord);
         scoreTextView.setText("Счёт: " + score);
         if (adapter == null) {
-            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, fiveAnswers);
+            adapter = new ArrayAdapter<>(this, R.layout.list_view_layout, fiveAnswers);
         }else {
             adapter.notifyDataSetChanged();
         }

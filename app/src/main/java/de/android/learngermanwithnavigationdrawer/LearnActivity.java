@@ -54,7 +54,7 @@ public class LearnActivity extends ParentActivity {
     @Override
     void pickRandomWords() {
         if (adapter == null) {
-            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, allQuestionList);
+            adapter = new ArrayAdapter<>(this, R.layout.list_view_layout, allQuestionList);
         }else {
             adapter.notifyDataSetChanged();
         }
