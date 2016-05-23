@@ -15,8 +15,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TestActivity extends ParentActivity {
+    public static final String THE_WORD = "theWord";
+    public static final String FIVE_ANSWERS = "fiveAnswers";
+    public static final String SCORE = "score";
     private int score = 0;
     private TextView scoreTextView;
+    private String theWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,19 +65,14 @@ public class TestActivity extends ParentActivity {
         for (int i = 0; i < 5; i++) {
             fiveQuestions.add(allQuestionList.get(i));
         }
-        final String theWord = fiveQuestions.get(0);
-        questionTextView.setText(theWord);
+        theWord = fiveQuestions.get(0);
         fiveAnswers.clear();
         for (String word : fiveQuestions) {
             fiveAnswers.add(dictionary.get(word));
         }
         Collections.shuffle(fiveAnswers);
-        if (adapter == null) {
-            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, fiveAnswers);
-        }else {
-            adapter.notifyDataSetChanged();
-        }
-        listView.setAdapter(adapter);
+
+        setTextViewAndArrayAdapterValues();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -97,4 +96,32 @@ public class TestActivity extends ParentActivity {
         });
     }
 
+    private void setTextViewAndArrayAdapterValues() {
+        questionTextView.setText(theWord);
+        scoreTextView.setText("Счёт: " + score);
+        if (adapter == null) {
+            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, fiveAnswers);
+        }else {
+            adapter.notifyDataSetChanged();
+        }
+        listView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle bundle) {
+        bundle.putString(THE_WORD, theWord);
+        bundle.putStringArrayList(FIVE_ANSWERS, fiveAnswers);
+        bundle.putInt(SCORE, score);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle bundle) {
+        if (bundle.containsKey(THE_WORD) && bundle.containsKey(FIVE_ANSWERS) && bundle.containsKey(SCORE)) {
+            theWord = bundle.getString(THE_WORD, "");
+            fiveAnswers = bundle.getStringArrayList(FIVE_ANSWERS);
+            score = bundle.getInt(SCORE);
+            adapter = null;
+            setTextViewAndArrayAdapterValues();
+        }
+    }
 }
