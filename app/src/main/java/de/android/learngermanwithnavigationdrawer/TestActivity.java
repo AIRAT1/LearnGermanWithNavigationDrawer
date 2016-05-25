@@ -3,16 +3,12 @@ package de.android.learngermanwithnavigationdrawer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
 
 public class TestActivity extends ParentActivity {
     public static final String THE_WORD = "theWord";
@@ -27,36 +23,14 @@ public class TestActivity extends ParentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
         firstInit();
-        readWords();
+        super.readWords();
         pickRandomWords();
     }
 
     void firstInit() {
-        questionTextView = (TextView)findViewById(R.id.questionTextView);
+        super.firstInit();
         scoreTextView = (TextView)findViewById(R.id.scoreTextView);
         scoreTextView.setText("Счёт: " + score);
-        listView = (ListView)findViewById(R.id.listView);
-        dictionary = new HashMap<>();
-        allQuestionList = new ArrayList<>();
-        fiveAnswers = new ArrayList<>();
-    }
-
-    void readWords() {
-        Scanner scanner = new Scanner(getResources().openRawResource(R.raw.list));
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
-            String[] parts = line.split(" ");
-            if (parts.length >= 2) {
-                String question = parts[0];
-                StringBuilder answerBuilder = new StringBuilder();
-                for (int i = 1; i < parts.length; i++) {
-                    answerBuilder.append(parts[i]).append(" ");
-                }
-                String answer = answerBuilder.toString().trim();
-                allQuestionList.add(question);
-                dictionary.put(question, answer);
-            }
-        }
     }
 
     void pickRandomWords() {
@@ -99,12 +73,13 @@ public class TestActivity extends ParentActivity {
     private void setTextViewAndArrayAdapterValues() {
         questionTextView.setText(theWord);
         scoreTextView.setText("Счёт: " + score);
-        if (adapter == null) {
-            adapter = new ArrayAdapter<>(this, R.layout.list_view_layout, fiveAnswers);
+
+        if (myArrayAdapter == null) {
+            myArrayAdapter = new MyArrayAdapter(this, fiveAnswers);
         }else {
-            adapter.notifyDataSetChanged();
+            myArrayAdapter.notifyDataSetChanged();
         }
-        listView.setAdapter(adapter);
+        listView.setAdapter(myArrayAdapter);
     }
 
     @Override
@@ -120,7 +95,8 @@ public class TestActivity extends ParentActivity {
             theWord = bundle.getString(THE_WORD, "");
             fiveAnswers = bundle.getStringArrayList(FIVE_ANSWERS);
             score = bundle.getInt(SCORE);
-            adapter = null;
+//            adapter = null;
+            myArrayAdapter = null;
             setTextViewAndArrayAdapterValues();
         }
     }

@@ -25,8 +25,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Text"
+        android:textSize="25sp"
+        android:textColor="#00FF00"
         android:id="@+id/scoreTextView"
-        android:layout_above="@+id/listView"
-        android:layout_alignRight="@+id/listView"
-        android:layout_alignEnd="@+id/listView" />
+        android:layout_alignBottom="@+id/questionTextView"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp" />
 </RelativeLayout>
