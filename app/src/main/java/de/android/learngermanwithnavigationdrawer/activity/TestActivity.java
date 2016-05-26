@@ -1,4 +1,4 @@
-package de.android.learngermanwithnavigationdrawer;
+package de.android.learngermanwithnavigationdrawer.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,10 +10,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import de.android.learngermanwithnavigationdrawer.adapter.MyArrayAdapter;
+import de.android.learngermanwithnavigationdrawer.R;
+
 public class TestActivity extends ParentActivity {
     public static final String THE_WORD = "theWord";
     public static final String FIVE_ANSWERS = "fiveAnswers";
     public static final String SCORE = "score";
+    public static final int WIN_SCORE = 10;
+    public static final int LOSE_SCORE = 4;
     private int score = 0;
     private TextView scoreTextView;
     private String theWord;
@@ -27,10 +32,10 @@ public class TestActivity extends ParentActivity {
         pickRandomWords();
     }
 
-    void firstInit() {
+    public void firstInit() {
         super.firstInit();
         scoreTextView = (TextView)findViewById(R.id.scoreTextView);
-        scoreTextView.setText("Счёт: " + score);
+        scoreTextView.setText(getString(R.string.score_text) + " " + score);
     }
 
     void pickRandomWords() {
@@ -54,16 +59,16 @@ public class TestActivity extends ParentActivity {
                 String rightAnswer = dictionary.get(theWord);
                 if (usersAnswer.equals(rightAnswer)) {
                     score++;
-                    scoreTextView.setText("Счёт: " + score);
-                    if (score == 10) {
-                        Toast.makeText(TestActivity.this, "Победа!", Toast.LENGTH_SHORT).show();
+                    scoreTextView.setText(getString(R.string.score_text) + " " + score);
+                    if (score == WIN_SCORE) {
+                        Toast.makeText(TestActivity.this, R.string.win_text, Toast.LENGTH_SHORT).show();
                     }
                 }else {
                     score--;
-                    if (score < -4) {
-                        Toast.makeText(TestActivity.this, "Позор!", Toast.LENGTH_SHORT).show();
+                    if (score < - LOSE_SCORE) {
+                        Toast.makeText(TestActivity.this, R.string.lose_text, Toast.LENGTH_SHORT).show();
                     }
-                    scoreTextView.setText("Счёт: " + score);
+                    scoreTextView.setText(getString(R.string.score_text) + " " + score);
                 }
                 pickRandomWords();
             }
@@ -72,7 +77,7 @@ public class TestActivity extends ParentActivity {
 
     private void setTextViewAndArrayAdapterValues() {
         questionTextView.setText(theWord);
-        scoreTextView.setText("Счёт: " + score);
+        scoreTextView.setText(getString(R.string.score_text) + " " + score);
 
         if (myArrayAdapter == null) {
             myArrayAdapter = new MyArrayAdapter(this, fiveAnswers);
@@ -95,7 +100,6 @@ public class TestActivity extends ParentActivity {
             theWord = bundle.getString(THE_WORD, "");
             fiveAnswers = bundle.getStringArrayList(FIVE_ANSWERS);
             score = bundle.getInt(SCORE);
-//            adapter = null;
             myArrayAdapter = null;
             setTextViewAndArrayAdapterValues();
         }

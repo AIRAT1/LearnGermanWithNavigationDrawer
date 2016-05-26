@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,24 +19,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TestActivity"
+            android:name=".activity.TestActivity"
             android:label="@string/title_activity_test"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.android.learngermanwithnavigationdrawer.MainActivity" />
+                android:value=".activity.MainActivity" />
         </activity>
         <activity
-            android:name=".LearnActivity"
+            android:name=".activity.LearnActivity"
             android:label="@string/title_activity_learn"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.android.learngermanwithnavigationdrawer.MainActivity" />
+                android:value=".activity.MainActivity" />
         </activity>
-        <activity android:name=".ParentActivity"></activity>
+        <activity android:name=".activity.ParentActivity"></activity>
     </application>
 
 </manifest>

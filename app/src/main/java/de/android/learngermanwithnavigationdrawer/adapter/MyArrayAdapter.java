@@ -1,4 +1,4 @@
-package de.android.learngermanwithnavigationdrawer;
+package de.android.learngermanwithnavigationdrawer.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import de.android.learngermanwithnavigationdrawer.R;
 
 public class MyArrayAdapter extends ArrayAdapter<String> {
     private final ArrayList<String> values;

@@ -1,4 +1,4 @@
-package de.android.learngermanwithnavigationdrawer;
+package de.android.learngermanwithnavigationdrawer.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+
+import de.android.learngermanwithnavigationdrawer.adapter.MyArrayAdapter;
+import de.android.learngermanwithnavigationdrawer.R;
 
 public abstract class ParentActivity extends AppCompatActivity {
     protected Map<String, String> dictionary;
@@ -22,14 +25,14 @@ public abstract class ParentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-    void firstInit() {
+    public void firstInit() {
         questionTextView = (TextView)findViewById(R.id.questionTextView);
         listView = (ListView)findViewById(R.id.listView);
         dictionary = new HashMap<>();
         allQuestionList = new ArrayList<>();
         fiveAnswers = new ArrayList<>();
     }
-    void readWords() {
+    public void readWords() {
         Scanner scanner = new Scanner(getResources().openRawResource(R.raw.list));
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();

@@ -1,8 +1,11 @@
-package de.android.learngermanwithnavigationdrawer;
+package de.android.learngermanwithnavigationdrawer.activity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+
+import de.android.learngermanwithnavigationdrawer.adapter.MyArrayAdapter;
+import de.android.learngermanwithnavigationdrawer.R;
 
 public class LearnActivity extends ParentActivity {
 
