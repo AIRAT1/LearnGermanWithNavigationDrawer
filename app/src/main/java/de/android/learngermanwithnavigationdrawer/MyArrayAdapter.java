@@ -1,6 +1,6 @@
 package de.android.learngermanwithnavigationdrawer;
 
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +13,20 @@ import java.util.Random;
 
 public class MyArrayAdapter extends ArrayAdapter<String> {
     private final ArrayList<String> values;
-    private final Activity contextActivity;
+//    alternative
+//    private final Activity contextActivity;
     private Random random = new Random();
+    private Context context;
 
-    public MyArrayAdapter(Activity contextActivity, ArrayList<String> values) {
-        super(contextActivity, R.layout.list_view_layout, values);
-        this.contextActivity = contextActivity;
+//    alternative
+//    public MyArrayAdapter(Activity contextActivity, ArrayList<String> values) {
+//        super(contextActivity, R.layout.list_view_layout, values);
+//        this.contextActivity = contextActivity;
+//        this.values = values;
+//    }
+    public MyArrayAdapter(Context context, ArrayList<String> values) {
+        super(context, R.layout.list_view_layout, values);
+        this.context = context;
         this.values = values;
     }
 
@@ -32,7 +40,9 @@ public class MyArrayAdapter extends ArrayAdapter<String> {
         ViewHolder holder;
         View view = convertView;
         if (view == null) {
-            LayoutInflater inflater = contextActivity.getLayoutInflater();
+//            alternative
+//            LayoutInflater inflater = contextActivity.getLayoutInflater();
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.list_view_layout, parent, false);
             holder = new ViewHolder();
             holder.textView = (TextView)view.findViewById(R.id.textViewListView);
