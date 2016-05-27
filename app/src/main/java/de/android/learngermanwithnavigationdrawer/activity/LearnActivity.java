@@ -1,15 +1,17 @@
 package de.android.learngermanwithnavigationdrawer.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.AdapterView;
 
-import de.android.learngermanwithnavigationdrawer.adapter.MyArrayAdapter;
 import de.android.learngermanwithnavigationdrawer.R;
+import de.android.learngermanwithnavigationdrawer.adapter.MyArrayAdapter;
 
 public class LearnActivity extends ParentActivity {
+    public static final int REQUEST_CODE = 12345;
     private FloatingActionButton fabAdd;
 
     @Override
@@ -28,7 +30,7 @@ public class LearnActivity extends ParentActivity {
                         .setAction(R.string.yes, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                startActivity(AddWordActivity.newIntent(LearnActivity.this));
+                                startActivityForResult(AddWordActivity.newIntent(LearnActivity.this), REQUEST_CODE);
                             }
                         }).show();
             }
@@ -56,5 +58,13 @@ public class LearnActivity extends ParentActivity {
     protected void onPause() {
         super.onPause();
         fabAdd.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE || resultCode == RESULT_OK) {
+            String word = data.getStringExtra(AddWordActivity.NEW_WORD);
+            String translation = data.getStringExtra(AddWordActivity.NEW_TRANSLATION);
+        }
     }
 }

@@ -11,12 +11,13 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import de.android.learngermanwithnavigationdrawer.R;
 
 public class AddWordActivity extends AppCompatActivity implements View.OnClickListener{
-    private EditText newWord, newTranslate;
+    public static final String NEW_WORD = "new word";
+    public static final String NEW_TRANSLATION = "new translation";
+    private EditText newWord, newTranslation;
     private TextInputLayout inputLayoutWord, inputLayoutTranslate;
     private Button btnOk;
 
@@ -36,10 +37,10 @@ public class AddWordActivity extends AppCompatActivity implements View.OnClickLi
         inputLayoutWord = (TextInputLayout)findViewById(R.id.inputLayoutWord);
         inputLayoutTranslate = (TextInputLayout)findViewById(R.id.inputLayoutTranslate);
         newWord = (EditText)findViewById(R.id.newWord);
-        newTranslate = (EditText)findViewById(R.id.newTranslate);
+        newTranslation = (EditText)findViewById(R.id.newTranslate);
         btnOk = (Button)findViewById(R.id.btnOk);
         newWord.addTextChangedListener(new MyTextWatcher(newWord));
-        newTranslate.addTextChangedListener(new MyTextWatcher(newTranslate));
+        newTranslation.addTextChangedListener(new MyTextWatcher(newTranslation));
         btnOk.setOnClickListener(this);
     }
 
@@ -55,7 +56,11 @@ public class AddWordActivity extends AppCompatActivity implements View.OnClickLi
         if (!validateTranslation()) {
             return;
         }
-        Toast.makeText(AddWordActivity.this, "All right!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent();
+        intent.putExtra(NEW_WORD, newWord.getText().toString());
+        intent.putExtra(NEW_TRANSLATION, newTranslation.getText().toString());
+        setResult(RESULT_OK, intent);
+        finish();
     }
 
     private boolean validateWord() {
@@ -69,9 +74,9 @@ public class AddWordActivity extends AppCompatActivity implements View.OnClickLi
         return true;
     }
     private boolean validateTranslation() {
-        if (newTranslate.getText().toString().trim().isEmpty()) {
+        if (newTranslation.getText().toString().trim().isEmpty()) {
             inputLayoutTranslate.setError(getString(R.string.errorAddNewWord));
-            requestFocus(newTranslate);
+            requestFocus(newTranslation);
             return false;
         }else {
             inputLayoutTranslate.setErrorEnabled(false);
