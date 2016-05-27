@@ -34,4 +34,15 @@
         android:id="@+id/scoreTextView"
         android:layout_alignBottom="@+id/questionTextView"
         android:layout_alignParentRight="true"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_action_add"
+        android:layout_alignBottom="@+id/listView"
+        android:layout_alignRight="@+id/listView"
+        android:visibility="gone"
+        android:layout_alignEnd="@+id/listView"/>
 </RelativeLayout>

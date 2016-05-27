@@ -1,6 +1,8 @@
 package de.android.learngermanwithnavigationdrawer.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -8,7 +10,7 @@ import de.android.learngermanwithnavigationdrawer.adapter.MyArrayAdapter;
 import de.android.learngermanwithnavigationdrawer.R;
 
 public class LearnActivity extends ParentActivity {
-
+    private FloatingActionButton fabAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +19,20 @@ public class LearnActivity extends ParentActivity {
         super.firstInit();
         super.readWords();
         pickRandomWords();
+        fabAdd = (FloatingActionButton) findViewById(R.id.fabAdd);
+        fabAdd.setVisibility(View.VISIBLE);
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, R.string.add_a_new_Word, Snackbar.LENGTH_LONG)
+                        .setAction(R.string.yes, new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                            }
+                        }).show();
+            }
+        });
     }
 
     @Override
@@ -36,4 +52,9 @@ public class LearnActivity extends ParentActivity {
         });
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        fabAdd.setVisibility(View.GONE);
+    }
 }

@@ -10,4 +10,7 @@
     <string name="win_text">Победа!</string>
     <string name="lose_text">Позор!</string>
     <string name="score_text">Счёт:</string>
+    <string name="title_activity_to_delete">ToDeleteActivity</string>
+    <string name="add_a_new_Word">Добавить новое слово в словарь</string>
+    <string name="yes">Да</string>
 </resources>
