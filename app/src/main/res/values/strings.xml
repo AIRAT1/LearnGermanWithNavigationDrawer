@@ -13,4 +13,8 @@
     <string name="title_activity_to_delete">ToDeleteActivity</string>
     <string name="add_a_new_Word">Добавить новое слово в словарь</string>
     <string name="yes">Да</string>
+    <string name="enter_new_word">Введите новое слово</string>
+    <string name="enter_translate">Введите перевод</string>
+    <string name="ok">Ok</string>
+    <string name="errorAddNewWord">Введите слово</string>
 </resources>

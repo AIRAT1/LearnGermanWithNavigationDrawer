@@ -28,7 +28,7 @@ public class LearnActivity extends ParentActivity {
                         .setAction(R.string.yes, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-
+                                startActivity(AddWordActivity.newIntent(LearnActivity.this));
                             }
                         }).show();
             }
