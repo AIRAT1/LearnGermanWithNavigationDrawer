@@ -75,7 +75,7 @@ public class AddWordActivity extends AppCompatActivity implements View.OnClickLi
     }
     private boolean validateTranslation() {
         if (newTranslation.getText().toString().trim().isEmpty()) {
-            inputLayoutTranslate.setError(getString(R.string.errorAddNewWord));
+            inputLayoutTranslate.setError(getString(R.string.errorAddNewTranslate));
             requestFocus(newTranslation);
             return false;
         }else {

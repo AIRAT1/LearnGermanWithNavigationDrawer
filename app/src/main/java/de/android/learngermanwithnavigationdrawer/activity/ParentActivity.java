@@ -2,7 +2,6 @@ package de.android.learngermanwithnavigationdrawer.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -11,8 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import de.android.learngermanwithnavigationdrawer.adapter.MyArrayAdapter;
 import de.android.learngermanwithnavigationdrawer.R;
+import de.android.learngermanwithnavigationdrawer.adapter.MyArrayAdapter;
 
 public abstract class ParentActivity extends AppCompatActivity {
     protected Map<String, String> dictionary;
@@ -40,14 +39,12 @@ public abstract class ParentActivity extends AppCompatActivity {
             String[] parts = line.split("/");
             if (parts.length >= 2) {
                 String question = parts[0];
-                Log.d("LOG", question);
 //                StringBuilder answerBuilder = new StringBuilder();
 //                for (int i = 1; i < parts.length; i++) {
 //                    answerBuilder.append(parts[i]).append(" ");
 //                }
 //                String answer = answerBuilder.toString().trim();
                 String answer = parts[1];
-                Log.d("LOG", answer);
                 allQuestionList.add(question);
                 dictionary.put(question, answer);
             }

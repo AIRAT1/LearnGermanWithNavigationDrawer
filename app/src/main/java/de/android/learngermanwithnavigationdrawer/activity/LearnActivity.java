@@ -45,7 +45,7 @@ public class LearnActivity extends ParentActivity {
             myArrayAdapter.notifyDataSetChanged();
         }
         listView.setAdapter(myArrayAdapter);
-
+        listView.setSelector(R.drawable.list_selector);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -61,8 +61,14 @@ public class LearnActivity extends ParentActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        fabAdd.setVisibility(View.VISIBLE);
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_CODE || resultCode == RESULT_OK) {
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
             String word = data.getStringExtra(AddWordActivity.NEW_WORD);
             String translation = data.getStringExtra(AddWordActivity.NEW_TRANSLATION);
         }

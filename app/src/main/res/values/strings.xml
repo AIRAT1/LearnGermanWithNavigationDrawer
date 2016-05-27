@@ -17,4 +17,5 @@
     <string name="enter_translate">Введите перевод</string>
     <string name="ok">Ok</string>
     <string name="errorAddNewWord">Введите слово</string>
+    <string name="errorAddNewTranslate">Введите перевод</string>
 </resources>
