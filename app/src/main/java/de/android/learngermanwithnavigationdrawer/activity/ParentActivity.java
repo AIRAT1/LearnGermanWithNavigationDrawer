@@ -34,6 +34,9 @@ public abstract class ParentActivity extends AppCompatActivity {
     }
     public void readWords() {
         Scanner scanner = new Scanner(getResources().openRawResource(R.raw.list));
+        readWordHelper(scanner);
+    }
+    private void readWordHelper(Scanner scanner) {
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
             String[] parts = line.split("/");
