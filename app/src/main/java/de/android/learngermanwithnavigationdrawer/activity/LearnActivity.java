@@ -69,8 +69,8 @@ public class LearnActivity extends ParentActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
-            String word = data.getStringExtra(AddWordActivity.NEW_WORD);
-            String translation = data.getStringExtra(AddWordActivity.NEW_TRANSLATION);
+            super.readWords();
+            myArrayAdapter.notifyDataSetChanged();
         }
     }
 }

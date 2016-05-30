@@ -12,6 +12,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+
 import de.android.learngermanwithnavigationdrawer.R;
 
 public class AddWordActivity extends AppCompatActivity implements View.OnClickListener{
@@ -56,9 +59,18 @@ public class AddWordActivity extends AppCompatActivity implements View.OnClickLi
         if (!validateTranslation()) {
             return;
         }
+
+        PrintStream output = null;
+        try {
+            output = new PrintStream(
+                    openFileOutput("added_words.txt", MODE_APPEND));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        output.println(newWord.getText().toString() + "/" + newTranslation.getText().toString());
+        output.close();
+
         Intent intent = new Intent();
-        intent.putExtra(NEW_WORD, newWord.getText().toString());
-        intent.putExtra(NEW_TRANSLATION, newTranslation.getText().toString());
         setResult(RESULT_OK, intent);
         finish();
     }

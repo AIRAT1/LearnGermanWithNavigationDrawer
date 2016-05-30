@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,6 +36,13 @@ public abstract class ParentActivity extends AppCompatActivity {
     public void readWords() {
         Scanner scanner = new Scanner(getResources().openRawResource(R.raw.list));
         readWordHelper(scanner);
+        try {
+            Scanner scanner2 = new Scanner(openFileInput("added_words.txt"));
+            readWordHelper(scanner2);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        scanner.close();
     }
     private void readWordHelper(Scanner scanner) {
         while (scanner.hasNextLine()) {
