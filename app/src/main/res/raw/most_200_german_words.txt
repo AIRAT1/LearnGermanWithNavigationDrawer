@@ -69,3 +69,132 @@
 тоже/auch
 позднее/spaeter
 там/dort
+покупать/kaufen
+продавать/verkaufen
+вместе/zusammen
+потом/dann
+час/die Stunde
+возможно/moeglich
+любовь/die Liebe
+лежать/liegen
+отвечать/antworten
+приходить/kommen
+извенять/entschuldigen
+функционировать/funktionieren
+стоит/kosten
+говорить/sagen
+промывать/spuelen
+соответствовать/stimmen
+мыть/waschen
+менять/wechseln
+ответ/die Antwort
+бензин/das Benzin
+кровать/das Bett
+картина/das Bild
+ошибка/der Fehler
+называть/heissen
+деньги/das Geld
+магазин/das Geschaeft
+дом/das Haus
+домашнее хозяйство/der Haushalt
+плита/der Herd
+идея/die Idee
+уметь/koennen
+быстро/schnell
+быть/sein
+стеллаж/das Regal
+по другому/anders
+в, внутри/in
+иметь/haben
+стул/der Stuhl
+стол/der Tisch
+горшок/der Topf
+часы/die Uhr
+солнце/die Sonne
+ходить/gehen
+время/die Zeit
+похожий/aehnlich
+смотреть/sehen
+честный/ehrlich
+разбитый/kaputt
+большой/gross
+весёлый/lustig
+оригинальный/originell
+очень/sehr
+сегодня/heute
+много/viel
+или/oder
+а, но/sondern
+к, на , в/zu
+наружу/raus
+микроволновая печь/die Mikrowelle
+калькулятор/der Taschenrechner
+лампа/die Lampe
+пить/trinken
+есть/essen
+карандаш/der Bleistift
+приводить в порядок/ordnen
+профессия/der Beruf
+врач/der Arzt
+дерево/der Baum
+после/nach
+на/auf
+против/gegen
+когда/als
+машина/das Auto
+он/er
+заказывать/bestellen
+платить/bezahlen
+нуждаться/brauchen
+точно/genau
+думать/glauben
+варить/kochen
+любить/moegen
+над/ueber
+упражняться/ueben
+ужин/das Abendessen
+объявление/die Anzeige
+яблоко/der Apfel
+быть должным/muessen
+хлеб/das Brot
+между/zwischen
+животное масло/die Butter
+под/unter
+яйцо/das Ei
+мороженное/das Eis
+клубника/die Erdbeere
+бутылка/die Flasche
+мясо/das Fleisch
+вопрос/die Frage
+сам/selbst
+завтрак/das Fruehstueck
+вилка/die Gabel
+газета/die Zeitung
+овощи/das Gemuese
+блюдо, суд/das Gericht
+разговор/das Gespraech
+напиток/das Getraenk
+пряности/das Gewueerz
+стекло/das Glas
+процент/das Prozent
+сыр/der Kaese
+пирог/der Kuchen
+ложка/der Loeffel
+больше/mehr
+нож/das Messer
+десерт/der Nachtisch
+растительное масло/das Oel
+перец/der Pfeffer
+цветок/die Blume
+цена/der Preis
+рис/der Reis
+сок/der Saft
+сливки/die Sahne
+ветчина/der Schinken
+соус/die Sosse
+медленно/langsam
+вода/das Wasser
+суп/die Suppe
+чашка/die Tasse
+тарелка/der Teller
+помидор/die Tomate
