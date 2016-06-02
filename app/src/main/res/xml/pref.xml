@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="editTextPreference" android:id="@+id/id"
+        android:summary="@string/enter_your_name"
+        android:title="@string/your_name"
+        android:inputType="textPersonName"/>
+    <SwitchPreference
+        android:key="switchPreference"
+        android:summaryOn="@string/direct_direction"
+        android:summaryOff="@string/back_direction"
+        android:title="@string/translate_direction"/>
+    <PreferenceScreen
+        android:key="screenPreference"
+        android:summary="@string/select_modules"
+        android:title="@string/modules">
+        <CheckBoxPreference
+            android:key="animals"
+            android:title="@string/animals"/>
+        <CheckBoxPreference
+            android:key="most_200_words"
+            android:title="@string/most_200_words"/>
+        <CheckBoxPreference
+            android:key="my_words"
+            android:title="@string/my_words"/>
+    </PreferenceScreen>
+</PreferenceScreen>
