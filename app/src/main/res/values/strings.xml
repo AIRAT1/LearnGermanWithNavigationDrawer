@@ -28,4 +28,11 @@
     <string name="my_words">Мои слова</string>
     <string name="direct_direction">Прямое направление</string>
     <string name="back_direction">Обратное направление</string>
+    <string name="choice_difficult">Выберите уровень сложности</string>
+    <string name="difficult_level">Уровень сложности</string>
+    <string-array name="difficult">
+        <item>Easy</item>
+        <item>Normal</item>
+        <item>Hard</item>
+    </string-array>
 </resources>

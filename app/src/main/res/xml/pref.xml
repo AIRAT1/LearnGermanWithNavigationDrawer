@@ -7,21 +7,30 @@
         android:inputType="textPersonName"/>
     <SwitchPreference
         android:key="switchPreference"
-        android:summaryOn="@string/direct_direction"
-        android:summaryOff="@string/back_direction"
+        android:summaryOn="@string/back_direction"
+        android:summaryOff="@string/direct_direction"
         android:title="@string/translate_direction"/>
+    <ListPreference
+        android:key="list"
+        android:entries="@array/difficult"
+        android:entryValues="@array/difficult"
+        android:summary="@string/choice_difficult"
+        android:title="@string/difficult_level"/>
     <PreferenceScreen
         android:key="screenPreference"
         android:summary="@string/select_modules"
         android:title="@string/modules">
         <CheckBoxPreference
             android:key="animals"
-            android:title="@string/animals"/>
+            android:title="@string/animals"
+            android:defaultValue="true"/>
         <CheckBoxPreference
             android:key="most_200_words"
-            android:title="@string/most_200_words"/>
+            android:title="@string/most_200_words"
+            android:defaultValue="false"/>
         <CheckBoxPreference
             android:key="my_words"
-            android:title="@string/my_words"/>
+            android:title="@string/my_words"
+            android:defaultValue="false"/>
     </PreferenceScreen>
 </PreferenceScreen>

@@ -1,11 +1,12 @@
 package de.android.learngermanwithnavigationdrawer.activity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,6 +22,7 @@ public abstract class ParentActivity extends AppCompatActivity {
     protected MyArrayAdapter myArrayAdapter;
     protected TextView questionTextView;
     protected ListView listView;
+    protected SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,17 +34,24 @@ public abstract class ParentActivity extends AppCompatActivity {
         dictionary = new HashMap<>();
         allQuestionList = new ArrayList<>();
         fiveAnswers = new ArrayList<>();
+        sp = PreferenceManager.getDefaultSharedPreferences(this);
     }
     public void readWords() {
-        Scanner scanner = new Scanner(getResources().openRawResource(R.raw.list));
-        readWordHelper(scanner);
-        try {
-            Scanner scanner2 = new Scanner(openFileInput("added_words.txt"));
-            readWordHelper(scanner2);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        scanner.close();
+//        Scanner animalsScanner = new Scanner(getResources().openRawResource(R.raw.list));
+//        readWordHelper(animalsScanner);
+//        animalsScanner.close();
+
+        Scanner most_200_wordsScanner = new Scanner(getResources().openRawResource(R.raw.most_200_german_words));
+        readWordHelper(most_200_wordsScanner);
+        most_200_wordsScanner.close();
+
+//        try {
+//            Scanner scanner2 = new Scanner(openFileInput("added_words.txt"));
+//            readWordHelper(scanner2);
+//            scanner2.close();
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
     }
     private void readWordHelper(Scanner scanner) {
         while (scanner.hasNextLine()) {
