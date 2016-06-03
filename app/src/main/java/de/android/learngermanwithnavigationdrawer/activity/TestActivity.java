@@ -28,8 +28,8 @@ public class TestActivity extends ParentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
         firstInit();
-        super.readWords();
-        pickRandomWords();
+//        super.readWords();
+//        pickRandomWords();
     }
 
     public void firstInit() {
@@ -103,5 +103,12 @@ public class TestActivity extends ParentActivity {
             myArrayAdapter = null;
             setTextViewAndArrayAdapterValues();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        super.readWords();
+        pickRandomWords();
     }
 }

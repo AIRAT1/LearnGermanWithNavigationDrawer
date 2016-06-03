@@ -19,8 +19,8 @@ public class LearnActivity extends ParentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
         super.firstInit();
-        super.readWords();
-        pickRandomWords();
+//        super.readWords();
+//        pickRandomWords();
         fabAdd = (FloatingActionButton) findViewById(R.id.fabAdd);
         fabAdd.setVisibility(View.VISIBLE);
         fabAdd.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +64,8 @@ public class LearnActivity extends ParentActivity {
     protected void onResume() {
         super.onResume();
         fabAdd.setVisibility(View.VISIBLE);
+        super.readWords();
+        pickRandomWords();
     }
 
     @Override
