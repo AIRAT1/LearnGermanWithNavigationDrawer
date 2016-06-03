@@ -1,5 +1,7 @@
 package de.android.learngermanwithnavigationdrawer.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,8 +12,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import de.android.learngermanwithnavigationdrawer.adapter.MyArrayAdapter;
 import de.android.learngermanwithnavigationdrawer.R;
+import de.android.learngermanwithnavigationdrawer.adapter.MyArrayAdapter;
 
 public class TestActivity extends ParentActivity {
     public static final String THE_WORD = "theWord";
@@ -39,6 +41,20 @@ public class TestActivity extends ParentActivity {
     }
 
     void pickRandomWords() {
+        if (allQuestionList.size() < 5) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(R.string.alarm)
+                    .setMessage(R.string.low_size_of_array)
+                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            startActivity(PrefActivity.newIntent(getApplicationContext()));
+//                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            dialog.dismiss();
+                        }
+                    }).create().show();
+            return;
+        }
         List<String> fiveQuestions = new ArrayList<>();
         Collections.shuffle(allQuestionList);
         for (int i = 0; i < 5; i++) {

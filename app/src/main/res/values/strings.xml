@@ -30,6 +30,8 @@
     <string name="back_direction">Обратное направление</string>
     <string name="choice_difficult">Выберите уровень сложности</string>
     <string name="difficult_level">Уровень сложности</string>
+    <string name="alarm">Внимание!</string>
+    <string name="low_size_of_array">Недостаточно слов в модуле. Выберите другой модуль</string>
     <string-array name="difficult">
         <item>Easy</item>
         <item>Normal</item>

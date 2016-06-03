@@ -39,6 +39,7 @@ public abstract class ParentActivity extends AppCompatActivity {
         sp = PreferenceManager.getDefaultSharedPreferences(this);
     }
     public void readWords() {
+        allQuestionList.clear();
         isAnimalSelected = sp.getBoolean("animals", false);
         isMost200WordsSelected = sp.getBoolean("most_200_words", false);
         isMyWordsSelected = sp.getBoolean("my_words", false);
@@ -74,11 +75,6 @@ public abstract class ParentActivity extends AppCompatActivity {
             String[] parts = line.split("/");
             if (parts.length >= 2) {
                 String question = parts[0];
-//                StringBuilder answerBuilder = new StringBuilder();
-//                for (int i = 1; i < parts.length; i++) {
-//                    answerBuilder.append(parts[i]).append(" ");
-//                }
-//                String answer = answerBuilder.toString().trim();
                 String answer = parts[1];
                 allQuestionList.add(question);
                 dictionary.put(question, answer);

@@ -18,8 +18,6 @@ import java.io.PrintStream;
 import de.android.learngermanwithnavigationdrawer.R;
 
 public class AddWordActivity extends AppCompatActivity implements View.OnClickListener{
-    public static final String NEW_WORD = "new word";
-    public static final String NEW_TRANSLATION = "new translation";
     private EditText newWord, newTranslation;
     private TextInputLayout inputLayoutWord, inputLayoutTranslate;
     private Button btnOk;
@@ -69,9 +67,6 @@ public class AddWordActivity extends AppCompatActivity implements View.OnClickLi
         }
         output.println(newWord.getText().toString() + "/" + newTranslation.getText().toString());
         output.close();
-
-        Intent intent = new Intent();
-        setResult(RESULT_OK, intent);
         finish();
     }
 

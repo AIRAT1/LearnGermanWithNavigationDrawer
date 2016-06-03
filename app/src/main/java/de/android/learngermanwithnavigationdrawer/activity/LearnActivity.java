@@ -1,6 +1,5 @@
 package de.android.learngermanwithnavigationdrawer.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,8 +18,6 @@ public class LearnActivity extends ParentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
         super.firstInit();
-//        super.readWords();
-//        pickRandomWords();
         fabAdd = (FloatingActionButton) findViewById(R.id.fabAdd);
         fabAdd.setVisibility(View.VISIBLE);
         fabAdd.setOnClickListener(new View.OnClickListener() {
@@ -30,7 +27,7 @@ public class LearnActivity extends ParentActivity {
                         .setAction(R.string.yes, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                startActivityForResult(AddWordActivity.newIntent(LearnActivity.this), REQUEST_CODE);
+                                startActivity(AddWordActivity.newIntent(LearnActivity.this));
                             }
                         }).show();
             }
@@ -41,8 +38,6 @@ public class LearnActivity extends ParentActivity {
     void pickRandomWords() {
         if (myArrayAdapter == null) {
             myArrayAdapter = new MyArrayAdapter(this, allQuestionList);
-        }else {
-            myArrayAdapter.notifyDataSetChanged();
         }
         listView.setAdapter(myArrayAdapter);
         listView.setSelector(R.drawable.list_selector);
@@ -66,13 +61,5 @@ public class LearnActivity extends ParentActivity {
         fabAdd.setVisibility(View.VISIBLE);
         super.readWords();
         pickRandomWords();
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
-            super.readWords();
-            myArrayAdapter.notifyDataSetChanged();
-        }
     }
 }
