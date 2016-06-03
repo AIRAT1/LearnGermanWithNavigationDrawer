@@ -10,7 +10,6 @@ import de.android.learngermanwithnavigationdrawer.R;
 import de.android.learngermanwithnavigationdrawer.adapter.MyArrayAdapter;
 
 public class LearnActivity extends ParentActivity {
-    public static final int REQUEST_CODE = 12345;
     private FloatingActionButton fabAdd;
 
     @Override
@@ -32,6 +31,7 @@ public class LearnActivity extends ParentActivity {
                         }).show();
             }
         });
+        // TODO add OnLongClickListener to delete values
     }
 
     @Override
