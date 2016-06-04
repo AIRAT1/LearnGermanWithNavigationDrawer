@@ -58,7 +58,7 @@ public class LearnActivity extends ParentActivity {
                     PrintStream output = null;
                     try {
                         output = new PrintStream(
-                                openFileOutput("added_words.txt", 0));
+                                openFileOutput("added_words.txt", MODE_PRIVATE));
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
