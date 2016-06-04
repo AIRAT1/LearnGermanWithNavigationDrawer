@@ -55,6 +55,7 @@ public class LearnActivity extends ParentActivity {
                 public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                     allQuestionList.remove(position);
                     myArrayAdapter.notifyDataSetChanged();
+                    questionTextView.setText("");
                     PrintStream output = null;
                     try {
                         output = new PrintStream(

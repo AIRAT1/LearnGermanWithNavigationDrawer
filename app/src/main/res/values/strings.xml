@@ -17,7 +17,7 @@
     <string name="enter_translate">Введите перевод</string>
     <string name="ok">Ok</string>
     <string name="errorAddNewWord">Введите слово</string>
-    <string name="errorAddNewTranslate">Введите перевод</string>
+    <string name="errorAddNewTranslate">Введите корректный перевод</string>
     <string name="translate_direction">Направление перевода</string>
     <string name="enter_your_name">Введите своё имя</string>
     <string name="your_name">Ваше имя</string>

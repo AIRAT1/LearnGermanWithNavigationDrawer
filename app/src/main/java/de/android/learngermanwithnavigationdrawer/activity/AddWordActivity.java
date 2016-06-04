@@ -81,7 +81,7 @@ public class AddWordActivity extends AppCompatActivity implements View.OnClickLi
         return true;
     }
     private boolean validateTranslation() {
-        if (newTranslation.getText().toString().trim().isEmpty()) {
+        if (newTranslation.getText().toString().trim().isEmpty() || wordEqualsTranslation()) {
             inputLayoutTranslate.setError(getString(R.string.errorAddNewTranslate));
             requestFocus(newTranslation);
             return false;
@@ -89,6 +89,10 @@ public class AddWordActivity extends AppCompatActivity implements View.OnClickLi
             inputLayoutTranslate.setErrorEnabled(false);
         }
         return true;
+    }
+
+    private boolean wordEqualsTranslation() {
+        return newTranslation.getText().toString().trim().equals(newWord.getText().toString().trim());
     }
 
     private void requestFocus(View view) {
