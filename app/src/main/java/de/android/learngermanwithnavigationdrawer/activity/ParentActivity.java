@@ -25,6 +25,7 @@ public abstract class ParentActivity extends AppCompatActivity {
     protected ListView listView;
     protected SharedPreferences sp;
     protected boolean isAnimalSelected, isMost200WordsSelected, isMyWordsSelected;
+    protected static boolean isOnlyMyWordsSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public abstract class ParentActivity extends AppCompatActivity {
         sp = PreferenceManager.getDefaultSharedPreferences(this);
     }
     public void readWords() {
+        isOnlyMyWordsSelected = false;
         allQuestionList.clear();
         isAnimalSelected = sp.getBoolean("animals", false);
         isMost200WordsSelected = sp.getBoolean("most_200_words", false);
@@ -61,6 +63,9 @@ public abstract class ParentActivity extends AppCompatActivity {
 
         if (isMyWordsSelected) {
             try {
+                if (!isAnimalSelected && !isMost200WordsSelected) {
+                    isOnlyMyWordsSelected = true;
+                }
                 Scanner scanner2 = new Scanner(openFileInput("added_words.txt"));
                 readWordHelper(scanner2);
                 scanner2.close();

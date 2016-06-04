@@ -6,6 +6,9 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.AdapterView;
 
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+
 import de.android.learngermanwithnavigationdrawer.R;
 import de.android.learngermanwithnavigationdrawer.adapter.MyArrayAdapter;
 
@@ -31,7 +34,6 @@ public class LearnActivity extends ParentActivity {
                         }).show();
             }
         });
-        // TODO add OnLongClickListener to delete values
     }
 
     @Override
@@ -47,6 +49,27 @@ public class LearnActivity extends ParentActivity {
                 questionTextView.setText(dictionary.get(allQuestionList.get(position)));
             }
         });
+        if (isOnlyMyWordsSelected) {
+            listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                    allQuestionList.remove(position);
+                    myArrayAdapter.notifyDataSetChanged();
+                    PrintStream output = null;
+                    try {
+                        output = new PrintStream(
+                                openFileOutput("added_words.txt", 0));
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                    for (String s : allQuestionList) {
+                        output.println(s + "/" + dictionary.get(s));
+                    }
+                    output.close();
+                    return true;
+                }
+            });
+        }
     }
 
     @Override
