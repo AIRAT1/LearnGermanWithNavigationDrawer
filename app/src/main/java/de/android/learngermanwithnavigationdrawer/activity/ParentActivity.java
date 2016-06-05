@@ -25,7 +25,7 @@ public abstract class ParentActivity extends AppCompatActivity {
     protected ListView listView;
     protected SharedPreferences sp;
     protected boolean isAnimalSelected, isMost200WordsSelected, isMyWordsSelected;
-    protected static boolean isOnlyMyWordsSelected;
+    protected static boolean isOnlyMyWordsSelected, isDestinationDirect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public abstract class ParentActivity extends AppCompatActivity {
         isAnimalSelected = sp.getBoolean("animals", false);
         isMost200WordsSelected = sp.getBoolean("most_200_words", false);
         isMyWordsSelected = sp.getBoolean("my_words", false);
+        isDestinationDirect = sp.getBoolean("switchPreference", true);
         if (isAnimalSelected == false && isMost200WordsSelected == false && isMyWordsSelected == false) {
             isAnimalSelected = true;
         }
@@ -79,8 +80,15 @@ public abstract class ParentActivity extends AppCompatActivity {
             String line = scanner.nextLine();
             String[] parts = line.split("/");
             if (parts.length >= 2) {
-                String question = parts[0];
-                String answer = parts[1];
+                String question;
+                String answer;
+                if (isDestinationDirect) {
+                    question = parts[0];
+                    answer = parts[1];
+                } else {
+                    question = parts[1];
+                    answer = parts[0];
+                }
                 allQuestionList.add(question);
                 dictionary.put(question, answer);
             }
