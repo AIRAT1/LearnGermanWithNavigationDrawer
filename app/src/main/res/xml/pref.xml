@@ -9,7 +9,9 @@
         android:key="switchPreference"
         android:summaryOn="@string/back_direction"
         android:summaryOff="@string/direct_direction"
-        android:title="@string/translate_direction"/>
+        android:title="@string/translate_direction"
+        android:switchTextOn="B"
+        android:switchTextOff="F"/>
     <ListPreference
         android:key="list"
         android:entries="@array/difficult"
