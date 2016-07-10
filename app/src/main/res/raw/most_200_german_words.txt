@@ -44,19 +44,19 @@
 ещё/noch
 никакой/kein
 уже/schon
-впрочем/uebrigens
+впрочем/übrigens
 но/aber
 из/aus
 это/das(es)
 твой/dein
 от/von
-что?/was
-кто?/wer
-как?/wie
-сколько?/wieviel
+что?/was?
+кто?/wer?
+как?/wie?
+сколько?/wieviel?
 вот как!/ach so!
 до свидания!/auf Wiedersehen!
-красивый, прекрасный/schoen
+красивый, прекрасный/schön
 стоять/stehen
 вечер/der Abend
 в настоящее время/zur Zeit
@@ -67,14 +67,14 @@
 и/und
 страна/das Land
 тоже/auch
-позднее/spaeter
+позднее/später
 там/dort
 покупать/kaufen
 продавать/verkaufen
 вместе/zusammen
 потом/dann
 час/die Stunde
-возможно/moeglich
+возможно/möglich
 любовь/die Liebe
 лежать/liegen
 отвечать/antworten
@@ -83,7 +83,7 @@
 функционировать/funktionieren
 стоит/kosten
 говорить/sagen
-промывать/spuelen
+промывать/spülen
 соответствовать/stimmen
 мыть/waschen
 менять/wechseln
@@ -92,14 +92,14 @@
 кровать/das Bett
 картина/das Bild
 ошибка/der Fehler
-называть/heissen
+называть/heißen
 деньги/das Geld
-магазин/das Geschaeft
+магазин/das Geschäft
 дом/das Haus
 домашнее хозяйство/der Haushalt
 плита/der Herd
 идея/die Idee
-уметь/koennen
+уметь/können
 быстро/schnell
 быть/sein
 стеллаж/das Regal
@@ -113,11 +113,11 @@
 солнце/die Sonne
 ходить/gehen
 время/die Zeit
-похожий/aehnlich
+похожий/ähnlich
 смотреть/sehen
 честный/ehrlich
 разбитый/kaputt
-большой/gross
+большой/groß
 весёлый/lustig
 оригинальный/originell
 очень/sehr
@@ -149,13 +149,13 @@
 точно/genau
 думать/glauben
 варить/kochen
-любить/moegen
-над/ueber
-упражняться/ueben
+любить/mögen
+над/über
+упражняться/üben
 ужин/das Abendessen
 объявление/die Anzeige
 яблоко/der Apfel
-быть должным/muessen
+быть должным/müssen
 хлеб/das Brot
 между/zwischen
 животное масло/die Butter
@@ -167,23 +167,23 @@
 мясо/das Fleisch
 вопрос/die Frage
 сам/selbst
-завтрак/das Fruehstueck
+завтрак/das Frühstueck
 вилка/die Gabel
 газета/die Zeitung
-овощи/das Gemuese
+овощи/das Gemüse
 блюдо, суд/das Gericht
-разговор/das Gespraech
-напиток/das Getraenk
-пряности/das Gewueerz
+разговор/das Gespräch
+напиток/das Getränk
+пряности/das Gewürz
 стекло/das Glas
 процент/das Prozent
-сыр/der Kaese
+сыр/der Käse
 пирог/der Kuchen
-ложка/der Loeffel
+ложка/der Löffel
 больше/mehr
 нож/das Messer
 десерт/der Nachtisch
-растительное масло/das Oel
+растительное масло/das Öl
 перец/der Pfeffer
 цветок/die Blume
 цена/der Preis
@@ -191,7 +191,7 @@
 сок/der Saft
 сливки/die Sahne
 ветчина/der Schinken
-соус/die Sosse
+соус/die Soße
 медленно/langsam
 вода/das Wasser
 суп/die Suppe
